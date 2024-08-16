@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Librarian.Port.In;
-internal interface SearchBookUseCase
+internal interface ISearchBookUseCase
 {
     public Book Search(string keyword);
 }

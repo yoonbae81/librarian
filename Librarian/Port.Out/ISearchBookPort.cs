@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Librarian.Port.Out;
-internal interface SearchBookPort
+internal interface ISearchBookPort
 {
-    public Book Search(string keyword);
+    public Task<Book> Search(string keyword);
 }
