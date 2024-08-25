@@ -16,4 +16,4 @@ The purpose of Librarian is to simplify the process of organizing and categorizi
 
 ## License
 
-Librarian is released under the [MIT License](LICENSE).
+Librarian is released under the [GPL-3.0 license](LICENSE).
