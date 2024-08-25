@@ -8,15 +8,11 @@ The purpose of Librarian is to simplify the process of organizing and categorizi
 
 ## Features
 
-- **Decimal Classification**: Librarian utilizes the Decimal Classification system to classify and organize epub and pdf files. This system provides a hierarchical structure that allows for efficient categorization and retrieval of documents.
+- **Decimal Classification**: Librarian utilizes the Decimal Classification system to classify and organize epub and pdf files. This system provides a structure that allows for efficient categorization and retrieval of documents.
 
 - **Modular Design**: Librarian follows the principles of Hexagonal Architecture, which promotes a modular and flexible design. This allows for easy extensibility and customization, making it possible to integrate Librarian with other systems or add new features without disrupting the core functionality.
 
 - **Search and Retrieval**: Librarian includes powerful search and retrieval capabilities, allowing users to quickly find specific documents based on various criteria such as title, author, category, or keywords.
-
-## Contributing
-
-We welcome contributions from the community! If you would like to contribute to Librarian, please follow our [contribution guidelines](CONTRIBUTING.md) for more information.
 
 ## License
 
