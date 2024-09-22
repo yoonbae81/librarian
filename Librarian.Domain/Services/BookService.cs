@@ -10,30 +10,14 @@ public class BookService
         ArgumentNullException.ThrowIfNull(separator);
 
         string keyword;
-        int lastDashIndex = fileName.LastIndexOf(separator);
-        if (lastDashIndex != -1)
+        int dashIndex = fileName.IndexOf(separator);
+        if (dashIndex != -1)
         {
-            keyword = fileName[..lastDashIndex].Trim();
+            keyword = fileName[..dashIndex].Trim();
         }
         else
         {
             keyword = fileName.Trim();
-        }
-
-        // Remove text inside parentheses
-        int openParenIndex = keyword.LastIndexOf('(');
-        while (openParenIndex != -1)
-        {
-            int closeParenIndex = keyword.LastIndexOf(')');
-            if (closeParenIndex != -1 && closeParenIndex > openParenIndex)
-            {
-                keyword = keyword.Remove(openParenIndex, closeParenIndex - openParenIndex + 1).Trim();
-            }
-            else
-            {
-                break;
-            }
-            openParenIndex = keyword.LastIndexOf('(');
         }
 
         return keyword;
@@ -44,18 +28,34 @@ public class BookService
         ArgumentNullException.ThrowIfNull(fileName);
         ArgumentNullException.ThrowIfNull(separator);
 
-        string author;
-        int lastDashIndex = fileName.LastIndexOf(separator);
-        if (lastDashIndex != -1)
+        string keyword;
+        int dashIndex = fileName.IndexOf(separator);
+        if (dashIndex != -1)
         {
-            author = fileName[(lastDashIndex + 1)..].Trim();
+            keyword = fileName[(dashIndex + 1)..].Trim();
+
+            // Remove text inside parentheses
+            int openParenIndex = keyword.LastIndexOf('(');
+            while (openParenIndex != -1)
+            {
+                int closeParenIndex = keyword.LastIndexOf(')');
+                if (closeParenIndex != -1 && closeParenIndex > openParenIndex)
+                {
+                    keyword = keyword.Remove(openParenIndex, closeParenIndex - openParenIndex + 1).Trim();
+                }
+                else
+                {
+                    break;
+                }
+                openParenIndex = keyword.LastIndexOf('(');
+            }
         }
         else
         {
-            author = string.Empty;
+            keyword = string.Empty;
         }
 
-        return author;
+        return keyword;
     }
 
     public static ClassificationCode GetClassificationCode(string code, Dictionary<string, string> availableCodesDict)
